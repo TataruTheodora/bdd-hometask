@@ -8,7 +8,7 @@ public class PropertyHolder {
     private final Properties properties = new Properties();
 
     {
-        try(FileInputStream fis = new FileInputStream(
+        try (FileInputStream fis = new FileInputStream(
                 "src/test/resources/browser.properties")) {
             properties.load(fis);
         } catch (IOException e) {

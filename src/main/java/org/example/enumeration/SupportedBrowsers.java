@@ -2,14 +2,18 @@ package org.example.enumeration;
 
 import org.example.invoker.WebDriverInvoker;
 import org.example.invoker.implementation.LocalChromeInvoker;
+import org.example.invoker.implementation.LocalFirefoxInvoker;
+import org.example.invoker.implementation.RemoteChromeInvoker;
 import org.openqa.selenium.WebDriver;
 
-public enum SupportedBrowser {
-    LOCAL_CHROME(new LocalChromeInvoker());
+public enum SupportedBrowsers {
+    LOCAL_CHROME(new LocalChromeInvoker()),
+    LOCAL_FIREFOX(new LocalFirefoxInvoker()),
+    REMOTE_CHROME(new RemoteChromeInvoker());
 
     private final WebDriverInvoker webDriverInvoker;
 
-    SupportedBrowser(WebDriverInvoker webDriverInvoker) {
+    SupportedBrowsers(WebDriverInvoker webDriverInvoker) {
         this.webDriverInvoker = webDriverInvoker;
     }
 
